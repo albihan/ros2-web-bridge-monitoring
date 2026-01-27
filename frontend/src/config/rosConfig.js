@@ -7,5 +7,13 @@ export const ROS_CONFIG = {
         // asumsi topik yg dikirim dari tim AI
         AI: { name: '/plant_health_status', type: 'std_msgs/String' }, // Asumsi output Sistem Cerdas
         CONFIG: { name: 'dashboard_config', type: 'std_msgs/String' }
+    },
+      
+    DEFAULT_VALUES: {
+        temperature: '--',
+        humidity: '--',
+        ldr: '--',
+        ai_detection: 'Menunggu objek...',
+        timestamp: null
     }
 };
