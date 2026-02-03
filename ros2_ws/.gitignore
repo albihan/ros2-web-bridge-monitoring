@@ -1,0 +1,11 @@
+# Folder hasil build ROS 2
+build/
+install/
+log/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Folder egg-info
+*.egg-info/
