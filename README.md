@@ -58,3 +58,42 @@ Pastikan Anda berada di root workspace.
 ```bash
 colcon build --packages-select bridge_data --symlink-install
 source install/setup.bash
+
+### 2. Menjalankan Sistem
+Gunakan perintah berikut untuk mengaktifkan jembatan data:
+
+Bash
+# Menjalankan Node Konversi Data (Data Engineering)
+./install/bridge_data/lib/bridge_data/iot_bridge
+Output yang diharapkan: [INFO] [iot_data_publisher]: IoT Data Bridge Node started.
+
+### 3. Integrasi Web
+Untuk menghubungkan ke Dashboard (RPL), pastikan Rosbridge aktif:
+
+Bash
+ros2 launch rosbridge_server rosbridge_websocket_launch.xml
+📡 Interface Data (JSON Output)
+Tim RPL (Dashboard) akan menerima data dalam format berikut:
+
+Topic: /suhu, /kelembapan, /ldr
+
+Format: std_msgs/String
+
+Payload:
+
+JSON
+{
+  "name": "suhu",
+  "value": 29.5,
+  "unit": "C",
+  "timestamp": "2026-02-04T15:00:00"
+}
+
+### Langkah 3: Commit dan Push Perubahan
+Setelah menyimpan file (Ctrl+O, Enter, Ctrl+X), kirim perubahan tersebut ke GitHub:
+
+```bash
+cd ~/ros2_web_monitoring/ros2_ws
+git add README.md
+git commit -m "Update: Add Team Members and Simplify Architecture Flow"
+git push origin main
